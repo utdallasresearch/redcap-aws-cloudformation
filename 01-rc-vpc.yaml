@@ -427,6 +427,7 @@ Resources:
                 Action:
                   - 'ssm:PutParameter'
                   - 'ssm:GetParameter'
+                  - 'ssm:DescribeParameters'
                 Effect: Allow
                 Resource: 'arn:aws:ssm:*:*:parameter/redcap-salt'
               - Sid: EncryptedEBS
@@ -459,6 +460,8 @@ Resources:
                   - "elasticbeanstalk:ListAvailableSolutionStacks"
                   - "elasticbeanstalk:DescribePlatformVersion"
                   - "elasticbeanstalk:UpdateEnvironment"
+                  - "elasticbeanstalk:RetrieveEnvironmentInfo"
+                  - "elasticbeanstalk:PutInstanceStatistics"
                   - "cloudformation:GetTemplate"
                   - 'cloudformation:DescribeStackResources'
                   - 'cloudformation:DescribeStackResource'

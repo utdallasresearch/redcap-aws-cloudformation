@@ -422,7 +422,7 @@ Resources:
   VPCStack:
     Type: AWS::CloudFormation::Stack
     Properties:
-      TemplateURL: https://s3.amazonaws.com/redcap-aws-cloudformation/01-rc-vpc.yaml
+      TemplateURL: https://utd-research-public.s3.amazonaws.com/01-rc-vpc.yaml
       Parameters:
         AccessCidr: !Ref 'AccessCidr'
         RedcapS3Bucket: !Ref 'RedcapS3Bucket'
@@ -520,7 +520,7 @@ Resources:
           !GetAtt 'VPCStack.Outputs.EBInstanceProfile'
         TempEC2InstanceProfile:
           !GetAtt 'VPCStack.Outputs.TempEC2InstanceProfile'
-      TemplateURL: https://s3.amazonaws.com/redcap-aws-cloudformation/02-rc-elasticbeanstalk.yaml
+      TemplateURL: https://utd-research-public.s3.amazonaws.com/02-rc-elasticbeanstalk.yaml
   route53:
     Condition: DeployRoute53
     DependsOn: redcapelasticbeanstalk
@@ -535,7 +535,7 @@ Resources:
           !Ref HostedZoneName
         DomainName:
           !Ref DomainName
-      TemplateURL: https://s3.amazonaws.com/redcap-aws-cloudformation/03-rc-route53.yaml
+      TemplateURL: https://utd-research-public.s3.amazonaws.com/03-rc-route53.yaml
 
 Outputs:
   REDCapURL:

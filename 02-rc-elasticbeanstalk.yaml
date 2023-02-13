@@ -119,8 +119,6 @@ Parameters:
     Type: String
   PHPVersion:
     AllowedValues:
-      - 7.2
-      - 7.3
       - 7.4
       - 8.0
       - 8.1
@@ -556,7 +554,7 @@ Resources:
 
 
 
-# Deploys the RDS Aurora Postgres cluster used to store the application data for WebAPI.
+# Deploys the RDS Aurora Mysql cluster used to store the application data for WebAPI.
   RDSCluster:
     Type: AWS::RDS::DBCluster
     Properties:
